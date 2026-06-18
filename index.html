@@ -3,70 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figuras Geométricas para Niños</title>
+    <title>Figuras Geométricas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>🎨 Figuras Geométricas 🎨</h1>
+    <main>
 
+<p class="instrucciones">
+ ¡Hola, pequeño explorador de las matemáticas! <br>
+¿hambriento de conocimiento?
+</p>
 <div class="contenedor">
 
-    <div class="figura">
+    <div class="figura rectangulo">
         <h2>🟦 Rectángulo</h2>
-
         <input type="number" id="baseR" placeholder="Base">
         <input type="number" id="alturaR" placeholder="Altura">
-
         <button onclick="calcularRectangulo()">Calcular</button>
-
-        <p id="resultadoRectangulo"></p>
     </div>
 
-    <div class="figura">
+    <div class="figura cuadrado">
         <h2>🟨 Cuadrado</h2>
-
         <input type="number" id="ladoC" placeholder="Lado">
-
         <button onclick="calcularCuadrado()">Calcular</button>
-
-        <p id="resultadoCuadrado"></p>
     </div>
 
-    <div class="figura">
+    <div class="figura circulo">
         <h2>⚪ Círculo</h2>
-
         <input type="number" id="radio" placeholder="Radio">
-
         <button onclick="calcularCirculo()">Calcular</button>
-
-        <p id="resultadoCirculo"></p>
     </div>
 
-    <div class="figura">
+    <div class="figura triangulo">
         <h2>🔺 Triángulo</h2>
-
         <input type="number" id="baseT" placeholder="Base">
         <input type="number" id="alturaT" placeholder="Altura">
         <input type="number" id="lado1" placeholder="Lado 1">
         <input type="number" id="lado2" placeholder="Lado 2">
         <input type="number" id="lado3" placeholder="Lado 3">
-
         <button onclick="calcularTriangulo()">Calcular</button>
-
-        <p id="resultadoTriangulo"></p>
     </div>
 
 </div>
-<!-- Modal -->
-<div id="miModal" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <h2>📐 Resultado</h2>
-        <p id="textoModal"></p>
+
+    </main>
+
+<p class="instrucciones">
+Elige una figura geométrica, escribe los números que te pide, presiona el botón y ve la magia
+</p>
+    <footer>
+        <div class="footer-contenido">
+            <p>© 2026 Página web de Figuras Geométricas. Todos los derechos reservados.</p>
+            <p>Desarrollado por: Samuel Aviles Aguinaga</p>
+            <p> Correo: marlonsamuel477@gmail.com |  Teléfono: +506 8638 7529</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h2>📐 Resultado</h2>
+            <div id="textoModal"></div>
+        </div>
     </div>
-</div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

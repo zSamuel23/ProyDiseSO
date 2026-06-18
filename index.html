@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras Geométricas para Niños</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>🎨 Figuras Geométricas 🎨</h1>
+
+<div class="contenedor">
+
+    <div class="figura">
+        <h2>🟦 Rectángulo</h2>
+
+        <input type="number" id="baseR" placeholder="Base">
+        <input type="number" id="alturaR" placeholder="Altura">
+
+        <button onclick="calcularRectangulo()">Calcular</button>
+
+        <p id="resultadoRectangulo"></p>
+    </div>
+
+    <div class="figura">
+        <h2>🟨 Cuadrado</h2>
+
+        <input type="number" id="ladoC" placeholder="Lado">
+
+        <button onclick="calcularCuadrado()">Calcular</button>
+
+        <p id="resultadoCuadrado"></p>
+    </div>
+
+    <div class="figura">
+        <h2>⚪ Círculo</h2>
+
+        <input type="number" id="radio" placeholder="Radio">
+
+        <button onclick="calcularCirculo()">Calcular</button>
+
+        <p id="resultadoCirculo"></p>
+    </div>
+
+    <div class="figura">
+        <h2>🔺 Triángulo</h2>
+
+        <input type="number" id="baseT" placeholder="Base">
+        <input type="number" id="alturaT" placeholder="Altura">
+        <input type="number" id="lado1" placeholder="Lado 1">
+        <input type="number" id="lado2" placeholder="Lado 2">
+        <input type="number" id="lado3" placeholder="Lado 3">
+
+        <button onclick="calcularTriangulo()">Calcular</button>
+
+        <p id="resultadoTriangulo"></p>
+    </div>
+
+</div>
+<!-- Modal -->
+<div id="miModal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2>📐 Resultado</h2>
+        <p id="textoModal"></p>
+    </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

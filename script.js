@@ -1,36 +1,33 @@
-// =========================
-// FUNCIONES DEL MODAL
-// =========================
-
-function mostrarModal(mensaje) {
+function mostrarModal(mensaje){
     document.getElementById("textoModal").innerHTML = mensaje;
     document.getElementById("miModal").style.display = "block";
 }
 
-function cerrarModal() {
+function cerrarModal(){
     document.getElementById("miModal").style.display = "none";
 }
 
-// Cerrar al hacer clic fuera del modal
-window.onclick = function(event) {
-    let modal = document.getElementById("miModal");
+function limpiarCampos(ids){
+    ids.forEach(id => {
+        document.getElementById(id).value = "";
+    });
+}
 
-    if (event.target === modal) {
+window.onclick = function(event){
+    const modal = document.getElementById("miModal");
+
+    if(event.target === modal){
         cerrarModal();
     }
-};
+}
 
-// =========================
-// RECTÁNGULO
-// =========================
-
-function calcularRectangulo() {
+function calcularRectangulo(){
 
     let base = Number(document.getElementById("baseR").value);
     let altura = Number(document.getElementById("alturaR").value);
 
-    if (base <= 0 || altura <= 0) {
-        mostrarModal("⚠️ Ingresa valores válidos para la base y la altura.");
+    if(base <= 0 || altura <= 0){
+        mostrarModal("¡Alto! Debes escribir números mayores que 0.");
         return;
     }
 
@@ -38,22 +35,22 @@ function calcularRectangulo() {
     let perimetro = 2 * (base + altura);
 
     mostrarModal(`
-        <h3>🟦 Rectángulo</h3>
-        <p><strong>Área:</strong> ${area}</p>
-        <p><strong>Perímetro:</strong> ${perimetro}</p>
+        <h3>¡Rectángulo calculado!</h3>
+        <br>
+         Área: <strong>${area}</strong><br><br>
+         Perímetro: <strong>${perimetro}</strong><br><br>
+         ¡Excelente trabajo!
     `);
+
+    limpiarCampos(["baseR","alturaR"]);
 }
 
-// =========================
-// CUADRADO
-// =========================
-
-function calcularCuadrado() {
+function calcularCuadrado(){
 
     let lado = Number(document.getElementById("ladoC").value);
 
-    if (lado <= 0) {
-        mostrarModal("⚠️ Ingresa un valor válido para el lado.");
+    if(lado <= 0){
+        mostrarModal(" ¡Alto! Debes escribir un número mayor que 0.");
         return;
     }
 
@@ -61,40 +58,40 @@ function calcularCuadrado() {
     let perimetro = 4 * lado;
 
     mostrarModal(`
-        <h3>🟨 Cuadrado</h3>
-        <p><strong>Área:</strong> ${area}</p>
-        <p><strong>Perímetro:</strong> ${perimetro}</p>
+        <h3> ¡Cuadrado calculado!</h3>
+        <br>
+         Área: <strong>${area}</strong><br><br>
+         Perímetro: <strong>${perimetro}</strong><br><br>
+         ¡Lo hiciste muy bien!
     `);
+
+    limpiarCampos(["ladoC"]);
 }
 
-// =========================
-// CÍRCULO
-// =========================
-
-function calcularCirculo() {
+function calcularCirculo(){
 
     let radio = Number(document.getElementById("radio").value);
 
-    if (radio <= 0) {
-        mostrarModal("⚠️ Ingresa un valor válido para el radio.");
+    if(radio <= 0){
+        mostrarModal(" ¡Alto! Debes escribir un número mayor que 0.");
         return;
     }
 
-    let area = Math.PI * Math.pow(radio, 2);
+    let area = Math.PI * radio * radio;
     let perimetro = 2 * Math.PI * radio;
 
     mostrarModal(`
-        <h3>⚪ Círculo</h3>
-        <p><strong>Área:</strong> ${area.toFixed(2)}</p>
-        <p><strong>Perímetro:</strong> ${perimetro.toFixed(2)}</p>
+        <h3> ¡Círculo calculado!</h3>
+        <br>
+        Área: <strong>${area.toFixed(2)}</strong><br><br>
+         Perímetro: <strong>${perimetro.toFixed(2)}</strong><br><br>
+         ¡Sigue aprendiendo!
     `);
+
+    limpiarCampos(["radio"]);
 }
 
-// =========================
-// TRIÁNGULO
-// =========================
-
-function calcularTriangulo() {
+function calcularTriangulo(){
 
     let base = Number(document.getElementById("baseT").value);
     let altura = Number(document.getElementById("alturaT").value);
@@ -103,14 +100,8 @@ function calcularTriangulo() {
     let lado2 = Number(document.getElementById("lado2").value);
     let lado3 = Number(document.getElementById("lado3").value);
 
-    if (
-        base <= 0 ||
-        altura <= 0 ||
-        lado1 <= 0 ||
-        lado2 <= 0 ||
-        lado3 <= 0
-    ) {
-        mostrarModal("⚠️ Ingresa valores válidos para el triángulo.");
+    if(base <= 0 || altura <= 0 || lado1 <= 0 || lado2 <= 0 || lado3 <= 0){
+        mostrarModal(" ¡Alto! Debes completar todos los datos correctamente.");
         return;
     }
 
@@ -118,8 +109,18 @@ function calcularTriangulo() {
     let perimetro = lado1 + lado2 + lado3;
 
     mostrarModal(`
-        <h3>🔺 Triángulo</h3>
-        <p><strong>Área:</strong> ${area}</p>
-        <p><strong>Perímetro:</strong> ${perimetro}</p>
+        <h3> ¡Triángulo calculado!</h3>
+        <br>
+         Área: <strong>${area}</strong><br><br>
+         Perímetro: <strong>${perimetro}</strong><br><br>
+         ¡Eres un genio de las figuras!
     `);
+
+    limpiarCampos([
+        "baseT",
+        "alturaT",
+        "lado1",
+        "lado2",
+        "lado3"
+    ]);
 }
